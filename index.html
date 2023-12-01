@@ -9,29 +9,78 @@
     <h1>Automoblie-Inheritance-Modal</h1>
 </body>
 <script>
+    /* This part of code is implemented using Object.create() */
+
+      //   Old-Safari ->
+
     let oldSafari = {
         displayScreen : "button",
         wheelRims : "normal",
         seats : 7,
-        sunRoof : true,
+        sunRoof : "normal",
         gearRod : "normal",
         light : "normal",
         Airbags : 6,
         steeringWheels : "normal",
         frontLights  : "normal",
         headLamps : "normal",
+        engine : " 2.0-litre, inline four-cylinder, turbocharged diesel engine ",
+        transmission : "six-speed manual and a torque-converter automatic transmission",
     };
+
+    // New-Safari ->
     
-    let newSafari=Object.create(oldSafari);
+    let newSafari = Object.create(oldSafari);
       newSafari.newTouchScreen = "12.30-inch touchscreen infotainment system";
       newSafari.newWheelRims = "NewDesign";
-      newSafari.bumper = "Fresh new bumper";
+      newSafari.newBumper = "Fresh new bumper";
       newSafari.addOnAirbag = "7 airbags";
       newSafari.newSteeringWheel = "illuminated Tata logo";
       newSafari.newGearRod = "Range Rover-style gear selector";
       newSafari.newFrontLights = "LED light bar running across its width";
       newSafari.newHeadLamps = " bi-projector LED headlamps with cornering lights";
+      newSafari.newSunRoof = "Panoromic sunroof";
 
       console.log(newSafari);
+
+      /* This part of code is implemented using Constructor function() */
+      
+      // Old-Safari ->
+function TataFourWheeler(displayScreen, wheelRims, seats, sunRoof, gearRod, frontLights, airbags, steeringWheel, headLamps, engine, transmission) {
+    this.displayScreen = displayScreen;
+    this.wheelRims = wheelRims;
+    this.seats = seats;
+    this.sunRoof = sunRoof;
+    this.gearRod = gearRod;
+    this.frontLights = frontLights;
+    this.airbags = airbags;
+    this.steeringWheel = steeringWheel;
+    this.headLamps = headLamps;
+    this.engine = engine;
+    this.transmission = transmission;
+}
+
+let oldTataSafari = new TataFourWheeler("button", "normal", 7, "normal", "normal", "normal", 6, "normal", "normal", "normal", "2.0-litre, inline four-cylinder, turbocharged diesel engine", "six-speed manual and a torque-converter automatic transmission");
+
+// New-Safari ->
+function TataNewFourWheeler(displayScreen,wheelRims ,seats , sunRoof, gearRod, frontLights, airbags, steeringWheel,headLamps, engine, transmission,bumper) {
+    TataFourWheeler.call(this, displayScreen,wheelRims ,seats , sunRoof, gearRod, frontLights, airbags, steeringWheel,headLamps, engine, transmission);
+
+    this. displayScreen = displayScreen ;
+    this.wheelRims = wheelRims;
+    this.seats = seats;
+    this.sunRoof = sunRoof;
+    this.gearRod = gearRod;
+    this.frontLights = frontLights;
+    this.airbags = airbags;
+    this.steeringWheel = steeringWheel;
+    this.headLamps = headLamps;
+    this.bumper = bumper;
+}
+
+let newTataSafari = new TataNewFourWheeler ("12.30-inch touchscreen infotainment system", "NewDesign",7,"Panoromic sunroof","Range Rover-style gear selector","LED light bar running across its width","7 airbags","illuminated Tata logo"," bi-projector LED headlamps with cornering lights"," 2.0-litre, inline four-cylinder, turbocharged diesel engine ","six-speed manual and a torque-converter automatic transmission","Fresh new bumper");
+
+console.log(newTataSafari);
+
 </script>
 </html>
