@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automoblie-Inheritance-Modal</title>
+</head>
+<body>
+    <h1>Automoblie-Inheritance-Modal</h1>
+</body>
+<script>
+    let oldSafari = {
+        displayScreen : "button",
+        wheelRims : "normal",
+        seats : 7,
+        sunRoof : true,
+        gearRod : "normal",
+        light : "normal",
+        Airbags : 6,
+        steeringWheels : "normal",
+        frontLights  : "normal",
+        headLamps : "normal",
+    };
+    
+    let newSafari=Object.create(oldSafari);
+      newSafari.newTouchScreen = "12.30-inch touchscreen infotainment system";
+      newSafari.newWheelRims = "NewDesign";
+      newSafari.bumper = "Fresh new bumper";
+      newSafari.addOnAirbag = "7 airbags";
+      newSafari.newSteeringWheel = "illuminated Tata logo";
+      newSafari.newGearRod = "Range Rover-style gear selector";
+      newSafari.newFrontLights = "LED light bar running across its width";
+      newSafari.newHeadLamps = " bi-projector LED headlamps with cornering lights";
+
+      console.log(newSafari);
+</script>
+</html>
